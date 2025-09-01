@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏥 Demo - Servicio Web de Citas Médicas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏥 Sistema de Citas Médicas Online</h1>
+            <p>Demo de Servicio Web - API REST</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" onclick="showTab('register')">👤 Registrar Paciente</button>
+            <button class="tab-btn" onclick="showTab('availability')">📅 Consultar Disponibilidad</button>
+            <button class="tab-btn" onclick="showTab('book')">📝 Reservar Cita</button>
+            <button class="tab-btn" onclick="showTab('history')">📋 Historial de Citas</button>
+            <button class="tab-btn" onclick="showTab('cancel')">❌ Cancelar Cita</button>
+        </nav>
+
+        <!-- Tab 1: Registrar Paciente -->
+        <div id="register" class="tab-content active">
+            <h2>👤 Registrar Nuevo Paciente</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="patientName">Nombre Completo:</label>
+                    <input type="text" id="patientName" required>
+                </div>
+                <div class="form-group">
+                    <label for="patientEmail">Correo Electrónico:</label>
+                    <input type="email" id="patientEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="patientId">Identificación:</label>
+                    <input type="text" id="patientId" required>
+                </div>
+                <button type="submit">Registrar Paciente</button>
+            </form>
+            <div id="registerResult" class="result"></div>
+        </div>
+
+        <!-- Tab 2: Consultar Disponibilidad -->
+        <div id="availability" class="tab-content">
+            <h2>📅 Consultar Disponibilidad de Médicos</h2>
+            <form id="availabilityForm">
+                <div class="form-group">
+                    <label for="date">Fecha:</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="doctor">Médico:</label>
+                    <select id="doctor" required>
+                        <option value="">Seleccionar médico...</option>
+                        <option value="dr-garcia">Dr. García - Cardiología</option>
+                        <option value="dr-martinez">Dr. Martínez - Pediatría</option>
+                        <option value="dr-rodriguez">Dr. Rodríguez - Medicina General</option>
+                    </select>
+                </div>
+                <button type="submit">Consultar Disponibilidad</button>
+            </form>
+            <div id="availabilityResult" class="result"></div>
+        </div>
+
+        <!-- Tab 3: Reservar Cita -->
+        <div id="book" class="tab-content">
+            <h2>📝 Reservar Nueva Cita</h2>
+            <form id="bookForm">
+                <div class="form-group">
+                    <label for="bookPatientId">ID del Paciente:</label>
+                    <input type="text" id="bookPatientId" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookDoctor">Médico:</label>
+                    <select id="bookDoctor" required>
+                        <option value="">Seleccionar médico...</option>
+                        <option value="dr-garcia">Dr. García - Cardiología</option>
+                        <option value="dr-martinez">Dr. Martínez - Pediatría</option>
+                        <option value="dr-rodriguez">Dr. Rodríguez - Medicina General</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bookDate">Fecha:</label>
+                    <input type="date" id="bookDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookTime">Hora:</label>
+                    <select id="bookTime" required>
+                        <option value="">Seleccionar hora...</option>
+                        <option value="09:00">09:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="14:00">02:00 PM</option>
+                        <option value="15:00">03:00 PM</option>
+                        <option value="16:00">04:00 PM</option>
+                    </select>
+                </div>
+                <button type="submit">Reservar Cita</button>
+            </form>
+            <div id="bookResult" class="result"></div>
+        </div>
+
+        <!-- Tab 4: Historial de Citas -->
+        <div id="history" class="tab-content">
+            <h2>📋 Historial de Citas del Paciente</h2>
+            <form id="historyForm">
+                <div class="form-group">
+                    <label for="historyPatientId">ID del Paciente:</label>
+                    <input type="text" id="historyPatientId" required>
+                </div>
+                <button type="submit">Consultar Historial</button>
+            </form>
+            <div id="historyResult" class="result"></div>
+        </div>
+
+        <!-- Tab 5: Cancelar Cita -->
+        <div id="cancel" class="tab-content">
+            <h2>❌ Cancelar Cita</h2>
+            <form id="cancelForm">
+                <div class="form-group">
+                    <label for="cancelAppointmentId">ID de la Cita:</label>
+                    <input type="text" id="cancelAppointmentId" required>
+                </div>
+                <button type="submit">Cancelar Cita</button>
+            </form>
+            <div id="cancelResult" class="result"></div>
+        </div>
+
+        <!-- Panel de API Calls -->
+        <div class="api-panel">
+            <h3>🔍 Llamadas API Realizadas</h3>
+            <div id="apiCalls" class="api-calls"></div>
+        </div>
+    </div>
+
+    <script src="api.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
