@@ -1,251 +1,264 @@
-# 🏥 Demo - Servicio Web de Citas Médicas
+# 🏥 Demo - Sistema de Citas Médicas
 
 ## 📋 Descripción del Proyecto
 
-Este es un **demo completo y funcional** de un servicio web para la gestión de citas médicas online. La aplicación simula tanto el **frontend** (interfaz web) como el **backend** (API REST) para demostrar cómo funcionan los servicios web en la práctica.
+Este es un **demo completo y funcional** de un sistema web moderno para la gestión de citas médicas. La aplicación está construida con **Next.js**, **React** y **Tailwind CSS**, proporcionando una experiencia de usuario profesional y una interfaz completamente responsiva.
 
 ## 🎯 Objetivo Educativo
 
 Este demo está diseñado para presentar en clase y mostrar:
-- ✅ Qué es un servicio web
-- ✅ Cómo funciona una API REST
-- ✅ Comunicación cliente-servidor
-- ✅ Formato JSON para intercambio de datos
-- ✅ Casos de uso reales de servicios web
+- ✅ **Servicios web modernos** con tecnologías actuales
+- ✅ **Arquitectura de aplicaciones web** (SPA)
+- ✅ **Interfaz de usuario profesional** y responsiva
+- ✅ **Gestión de estado** en aplicaciones React
+- ✅ **Diseño formal y corporativo** para entornos profesionales
 
 ## 🚀 Funcionalidades Implementadas
 
-### 1. **Registrar Pacientes**
-- Endpoint: `POST /api/pacientes`
-- Permite registrar nuevos pacientes con nombre, email e identificación
-- Validación de datos duplicados
+### 🔐 **Sistema de Autenticación**
+- **Login con roles**: Administrador, Doctor, Paciente
+- **Cuentas de prueba** predefinidas para demostración
+- **Gestión de sesiones** con estado persistente
 
-### 2. **Consultar Disponibilidad**
-- Endpoint: `GET /api/medicos/{id}/disponibilidad?fecha={fecha}`
-- Muestra horarios disponibles de médicos por fecha
-- Simula disponibilidad real con horarios predefinidos
+### 👥 **Gestión de Usuarios**
+- **Dashboard personalizado** según el rol del usuario
+- **Perfiles diferenciados** para cada tipo de usuario
+- **Navegación adaptativa** según permisos
 
-### 3. **Reservar Citas**
-- Endpoint: `POST /api/citas`
-- Permite reservar citas médicas
-- Valida disponibilidad y existencia de paciente/médico
+### 📅 **Sistema de Citas**
+- **Reservar citas médicas** con validación completa
+- **Consultar disponibilidad** de doctores
+- **Gestionar citas existentes** (ver, cancelar)
+- **Historial completo** de citas por paciente
 
-### 4. **Consultar Historial**
-- Endpoint: `GET /api/citas/paciente/{id}`
-- Muestra todas las citas de un paciente
-- Incluye estado de las citas (activa, completada, cancelada)
+### 👨‍⚕️ **Gestión de Doctores**
+- **Lista completa** de doctores disponibles
+- **Filtros por especialidad** y búsqueda
+- **Información detallada** de cada doctor
+- **Horarios de atención** y disponibilidad
 
-### 5. **Cancelar Citas**
-- Endpoint: `DELETE /api/citas/{id}`
-- Permite cancelar citas activas
-- Libera el horario para otros pacientes
+### 📊 **Dashboard Interactivo**
+- **Estadísticas en tiempo real** de citas
+- **Actividad reciente** del usuario
+- **Acciones rápidas** para funciones comunes
+- **Vista adaptativa** según el rol
 
 ## 🛠️ Tecnologías Utilizadas
 
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **Backend Simulado**: JavaScript (API REST simulada)
-- **Formato de Datos**: JSON
-- **Estilo**: CSS moderno con gradientes y animaciones
+### **Frontend Moderno:**
+- **Next.js 14** - Framework React con App Router
+- **React 18** - Biblioteca de interfaz de usuario
+- **Tailwind CSS** - Framework de estilos utilitarios
+- **React Icons** - Iconografía profesional
+
+### **Características Técnicas:**
+- **Static Site Generation** - Optimizado para despliegue
+- **Responsive Design** - Compatible con todos los dispositivos
+- **Componentes Reutilizables** - Arquitectura modular
+- **Estado Local** - Gestión de datos con React hooks
 
 ## 📁 Estructura del Proyecto
 
 ```
 Demo-web-service/
-├── index.html          # Página principal con interfaz de usuario
-├── styles.css          # Estilos CSS para la interfaz
-├── api.js             # Backend simulado (API REST)
-├── app.js             # Frontend (cliente del servicio web)
-└── README.md          # Documentación del proyecto
+├── app/                    # App Router de Next.js
+│   ├── globals.css        # Estilos globales con Tailwind
+│   └── page.js            # Página principal
+├── components/             # Componentes React reutilizables
+│   ├── LoginForm.js       # Formulario de autenticación
+│   ├── Header.js          # Navegación principal
+│   ├── Dashboard.js       # Panel de control
+│   ├── AppointmentForm.js # Formulario de citas
+│   ├── DoctorList.js      # Lista de doctores
+│   └── AppointmentList.js # Lista de citas
+├── lib/                   # Utilidades y datos
+│   └── data.js           # Datos simulados y funciones
+├── next.config.js         # Configuración de Next.js
+├── tailwind.config.js     # Configuración de Tailwind
+├── package.json          # Dependencias del proyecto
+├── vercel.json           # Configuración de despliegue
+└── README.md             # Documentación del proyecto
+```
+
+## 🚀 Instalación y Uso
+
+### **Instalación Local:**
+```bash
+# Clonar el repositorio
+git clone https://github.com/JulianCVM/Demo-web-service.git
+cd Demo-web-service
+
+# Instalar dependencias
+npm install
+
+# Ejecutar en modo desarrollo
+npm run dev
+
+# Abrir en el navegador
+# http://localhost:3000
+```
+
+### **Despliegue en Vercel:**
+```bash
+# Build para producción
+npm run build
+
+# El proyecto está configurado para despliegue automático en Vercel
+# Solo necesitas hacer push al repositorio
 ```
 
 ## 🎮 Cómo Usar la Demo
 
-### Paso 1: Abrir la Aplicación
-1. Abre el archivo `index.html` en cualquier navegador web
-2. La aplicación se cargará automáticamente
-3. Observa el **Panel de Debug** en la parte inferior - aquí verás todas las llamadas API
+### **Paso 1: Acceder al Sistema**
+1. Abre la aplicación en tu navegador
+2. Verás la pantalla de login con el diseño profesional
+3. Usa las **cuentas de prueba** proporcionadas
+
+### **Paso 2: Cuentas de Prueba Disponibles**
+- **👑 Administrador**: `admin@demo.com` / `admin123`
+- **👨‍⚕️ Doctor**: `doctor@demo.com` / `doctor123`  
+- **👤 Paciente**: `paciente@demo.com` / `paciente123`
+
+## 🎯 **FLUJO COMPLETO DE DEMOSTRACIÓN**
+
+### **📋 Escenario: "Explorar el Sistema de Citas Médicas"**
 
 ---
 
-## 🎯 **FLUJO COMPLETO DE CASO DE USO**
-### *Sigue este paso a paso para probar toda la API*
+### **PASO 1: 🔐 Iniciar Sesión**
+**Objetivo**: Acceder al sistema con diferentes roles
 
-### **📋 Escenario: "María quiere agendar una cita médica"**
-
----
-
-### **PASO 1: 👤 Registrar un Nuevo Paciente**
-**Objetivo**: Crear un nuevo paciente en el sistema
-
-1. **Ve a la pestaña "Registrar Paciente"**
-2. **Completa el formulario con estos datos:**
-   - **Nombre Completo**: `María González`
-   - **Correo Electrónico**: `maria.gonzalez@email.com`
-   - **Identificación**: `98765432`
-3. **Haz clic en "Registrar Paciente"**
-4. **Observa los resultados:**
-   - ✅ Verás el mensaje de éxito
-   - 📡 En el panel de debug verás: `POST /api/pacientes`
-   - 💾 **Anota el ID del paciente** (ej: P004) - lo necesitarás después
+1. **Usa la cuenta de Paciente**: `paciente@demo.com` / `paciente123`
+2. **Observa el Dashboard personalizado** con estadísticas de citas
+3. **Explora la navegación** adaptada al rol de paciente
+4. **Cierra sesión** y prueba con **Doctor**: `doctor@demo.com` / `doctor123`
+5. **Compara las diferencias** en el dashboard según el rol
 
 **🔍 ¿Qué está pasando?**
-- El frontend envía una petición POST al endpoint `/api/pacientes`
-- El backend valida que no exista un paciente con esa identificación o email
-- Se crea un nuevo paciente con un ID único
-- Se devuelve la respuesta en formato JSON
+- El sistema autentica al usuario y carga su perfil
+- Se renderiza un dashboard personalizado según el rol
+- La navegación se adapta a los permisos del usuario
 
 ---
 
-### **PASO 2: 📅 Consultar Disponibilidad de Médicos**
-**Objetivo**: Ver qué horarios están disponibles para un médico específico
+### **PASO 2: 📅 Reservar una Nueva Cita**
+**Objetivo**: Crear una cita médica completa
 
-1. **Ve a la pestaña "Consultar Disponibilidad"**
-2. **Selecciona:**
-   - **Médico**: `Dr. García - Cardiología`
-   - **Fecha**: `2024-01-20` (o cualquier fecha futura)
-3. **Haz clic en "Consultar Disponibilidad"**
-4. **Observa los resultados:**
-   - ✅ Verás los horarios disponibles (ej: 09:00, 10:00, 14:00)
-   - 📡 En el panel de debug verás: `GET /api/medicos/dr-garcia/disponibilidad?fecha=2024-01-20`
-
-**🔍 ¿Qué está pasando?**
-- El frontend hace una petición GET al endpoint `/api/medicos/{id}/disponibilidad`
-- El backend consulta la base de datos de horarios disponibles
-- Se devuelven solo los horarios que están libres para ese médico y fecha
-
----
-
-### **PASO 3: 📝 Reservar una Cita Médica**
-**Objetivo**: Agendar una cita usando el paciente recién creado
-
-1. **Ve a la pestaña "Reservar Cita"**
+1. **Desde el Dashboard, haz clic en "Reservar Cita"**
 2. **Completa el formulario:**
-   - **ID del Paciente**: `P004` (el ID que obtuviste en el Paso 1)
-   - **Médico**: `Dr. García - Cardiología`
-   - **Fecha**: `2024-01-20` (la misma fecha del Paso 2)
-   - **Hora**: `09:00` (uno de los horarios disponibles del Paso 2)
+   - **Doctor**: Selecciona cualquier especialista
+   - **Fecha**: Elige una fecha futura
+   - **Hora**: Selecciona un horario disponible
+   - **Motivo**: Elige el motivo de la consulta
+   - **Notas**: Agrega información adicional (opcional)
 3. **Haz clic en "Reservar Cita"**
-4. **Observa los resultados:**
-   - ✅ Verás el mensaje de éxito con todos los detalles de la cita
-   - 📡 En el panel de debug verás: `POST /api/citas`
-   - 💾 **Anota el ID de la cita** (ej: A004) - lo necesitarás después
+4. **Observa la confirmación** y el mensaje de éxito
 
 **🔍 ¿Qué está pasando?**
-- El frontend envía una petición POST al endpoint `/api/citas`
-- El backend valida que el paciente y médico existan
-- Verifica que el horario esté disponible
-- Crea la cita y marca el horario como ocupado
-- Devuelve toda la información de la cita creada
+- El formulario valida todos los campos requeridos
+- Se simula la creación de la cita en el sistema
+- Se actualiza el estado local de la aplicación
 
 ---
 
-### **PASO 4: 📋 Consultar Historial del Paciente**
-**Objetivo**: Ver todas las citas que tiene el paciente
+### **PASO 3: 👨‍⚕️ Explorar la Lista de Doctores**
+**Objetivo**: Conocer el equipo médico disponible
 
-1. **Ve a la pestaña "Historial de Citas"**
-2. **Ingresa el ID del Paciente**: `P004`
-3. **Haz clic en "Consultar Historial"**
-4. **Observa los resultados:**
-   - ✅ Verás la información del paciente
-   - 📅 Verás la cita que acabas de crear
-   - 📡 En el panel de debug verás: `GET /api/citas/paciente/P004`
+1. **Haz clic en "Ver Doctores"** en el dashboard
+2. **Usa los filtros de búsqueda:**
+   - Busca por nombre o especialidad
+   - Filtra por especialidad específica
+3. **Explora la información detallada** de cada doctor
+4. **Observa los horarios de atención** y experiencia
 
 **🔍 ¿Qué está pasando?**
-- El frontend hace una petición GET al endpoint `/api/citas/paciente/{id}`
-- El backend busca todas las citas asociadas a ese paciente
-- Se devuelven las citas ordenadas por fecha (más recientes primero)
+- Se cargan todos los doctores disponibles
+- Los filtros funcionan en tiempo real
+- Se muestra información completa de cada profesional
 
 ---
 
-### **PASO 5: ❌ Cancelar la Cita (Opcional)**
-**Objetivo**: Cancelar la cita recién creada
+### **PASO 4: 📋 Gestionar Citas Existentes**
+**Objetivo**: Ver y administrar las citas del usuario
 
-1. **Ve a la pestaña "Cancelar Cita"**
-2. **Ingresa el ID de la Cita**: `A004` (el ID que obtuviste en el Paso 3)
-3. **Haz clic en "Cancelar Cita"**
-4. **Observa los resultados:**
-   - ✅ Verás el mensaje de confirmación de cancelación
-   - 📡 En el panel de debug verás: `DELETE /api/citas/A004`
+1. **Haz clic en "Mis Citas"** en el dashboard
+2. **Explora las diferentes vistas:**
+   - **Filtros por estado**: Próximas, Completadas, Canceladas
+   - **Ordenamiento**: Por fecha, doctor, estado
+3. **Prueba cancelar una cita** (si tienes permisos)
+4. **Observa las estadísticas** en las tarjetas superiores
 
 **🔍 ¿Qué está pasando?**
-- El frontend envía una petición DELETE al endpoint `/api/citas/{id}`
-- El backend cambia el estado de la cita a "cancelled"
-- Libera el horario para que otros pacientes puedan usarlo
+- Se cargan todas las citas del usuario
+- Los filtros y ordenamiento funcionan dinámicamente
+- Las acciones se reflejan inmediatamente en la interfaz
 
 ---
 
-### **PASO 6: 🔄 Verificar el Historial Actualizado**
-**Objetivo**: Confirmar que la cita fue cancelada
+### **PASO 5: 🔄 Probar Diferentes Roles**
+**Objetivo**: Experimentar con diferentes tipos de usuario
 
-1. **Regresa a la pestaña "Historial de Citas"**
-2. **Ingresa nuevamente el ID del Paciente**: `P004`
-3. **Haz clic en "Consultar Historial"**
-4. **Observa los resultados:**
-   - ✅ Verás que la cita ahora aparece como "cancelled"
-   - 📡 Se registra otra llamada GET al mismo endpoint
+1. **Cierra sesión** y entra como **Administrador**: `admin@demo.com` / `admin123`
+2. **Observa las diferencias:**
+   - Dashboard con estadísticas globales
+   - Acceso a todas las funcionalidades
+   - Vista administrativa del sistema
+3. **Prueba como Doctor**: `doctor@demo.com` / `doctor123`
+4. **Compara las funcionalidades** disponibles para cada rol
 
----
-
-## 🧪 **PRUEBAS ADICIONALES RECOMENDADAS**
-
-### **Prueba de Validaciones de Error:**
-
-#### **Error 1: Paciente Duplicado**
-1. Ve a "Registrar Paciente"
-2. Intenta registrar un paciente con email `juan.perez@email.com` (ya existe)
-3. ✅ Deberías ver un error: "Ya existe un paciente con esta identificación o email"
-
-#### **Error 2: Horario No Disponible**
-1. Ve a "Reservar Cita"
-2. Intenta reservar con:
-   - Paciente: `P001`
-   - Médico: `Dr. García`
-   - Fecha: `2024-01-20`
-   - Hora: `11:00` (este horario está ocupado)
-3. ✅ Deberías ver un error: "Horario no disponible"
-
-#### **Error 3: Paciente No Encontrado**
-1. Ve a "Reservar Cita"
-2. Intenta reservar con ID de paciente: `P999` (no existe)
-3. ✅ Deberías ver un error: "Paciente no encontrado"
-
-#### **Error 4: Cita Ya Cancelada**
-1. Ve a "Cancelar Cita"
-2. Intenta cancelar la cita `A004` nuevamente
-3. ✅ Deberías ver un error: "La cita ya está cancelada"
+**🔍 ¿Qué está pasando?**
+- Cada rol tiene un dashboard personalizado
+- Los permisos se reflejan en la navegación
+- Las estadísticas se adaptan al contexto del usuario
 
 ---
+
+## 🧪 **CARACTERÍSTICAS DESTACADAS**
+
+### **🎨 Diseño Profesional:**
+- **Interfaz formal y corporativa** con colores sobrios
+- **Iconografía profesional** usando React Icons
+- **Diseño responsivo** que funciona en todos los dispositivos
+- **Tipografía moderna** con Source Sans Pro
+
+### **⚡ Funcionalidades Avanzadas:**
+- **Autenticación por roles** con dashboards personalizados
+- **Filtros y búsqueda** en tiempo real
+- **Validación de formularios** completa
+- **Estados de carga** y feedback visual
+- **Navegación intuitiva** con breadcrumbs
+
+### **📱 Experiencia de Usuario:**
+- **Animaciones suaves** y transiciones
+- **Feedback inmediato** en todas las acciones
+- **Mensajes de error** claros y útiles
+- **Interfaz adaptativa** según el rol del usuario
 
 ## 📊 **DATOS DE PRUEBA DISPONIBLES**
 
-### **Pacientes Predefinidos (para pruebas rápidas):**
-- **P001**: Juan Pérez (juan.perez@email.com) - ID: 12345678
-- **P002**: María García (maria.garcia@email.com) - ID: 87654321  
-- **P003**: Carlos López (carlos.lopez@email.com) - ID: 11223344
+### **👥 Usuarios del Sistema:**
+- **👑 Administrador**: `admin@demo.com` / `admin123`
+- **👨‍⚕️ Doctor**: `doctor@demo.com` / `doctor123`
+- **👤 Paciente**: `paciente@demo.com` / `paciente123`
 
-### **Médicos Disponibles:**
-- **Dr. García**: Cardiología
-- **Dr. Martínez**: Pediatría
-- **Dr. Rodríguez**: Medicina General
+### **👨‍⚕️ Doctores Disponibles:**
+- **Dr. Ana García** - Cardiología
+- **Dr. Carlos Martínez** - Pediatría  
+- **Dr. María Rodríguez** - Medicina General
+- **Dr. Luis Fernández** - Dermatología
+- **Dr. Carmen López** - Ginecología
 
-### **Citas de Ejemplo:**
-- **A001**: Juan Pérez con Dr. García (15/01/2024, 09:00) - Activa
-- **A002**: María García con Dr. Martínez (16/01/2024, 10:00) - Activa
-- **A003**: Juan Pérez con Dr. Rodríguez (10/01/2024, 14:00) - Completada
+### **📅 Citas de Ejemplo:**
+- **Citas activas** para diferentes doctores
+- **Historial completo** de citas pasadas
+- **Estados variados**: Programadas, Completadas, Canceladas
+- **Datos realistas** con fechas y horarios
 
-### **Horarios Disponibles (2024-01-20):**
-- **Dr. García**: 09:00, 10:00, 14:00 (11:00 ocupado)
-- **Dr. Martínez**: 09:00, 11:00 (10:00 ocupado)
-- **Dr. Rodríguez**: 09:00, 15:00, 16:00
-
-## 🔍 Panel de Debug - Llamadas API
-
-En la parte inferior de la aplicación encontrarás un **panel de debug** que muestra:
-- ✅ Todas las llamadas HTTP realizadas
-- ✅ Métodos (GET, POST, DELETE)
-- ✅ URLs de los endpoints
-- ✅ Datos enviados y respuestas recibidas
-- ✅ Timestamps de cada operación
+### **🕒 Horarios Disponibles:**
+- **Horarios de mañana**: 09:00 - 12:00
+- **Horarios de tarde**: 14:00 - 17:00
+- **Disponibilidad por especialidad**
+- **Fechas futuras** para reservas
 
 ## 🎓 **GUÍA DE PRESENTACIÓN EN CLASE**
 
