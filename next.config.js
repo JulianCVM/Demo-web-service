@@ -7,7 +7,7 @@ const nextConfig = {
   images: {
     unoptimized: true, // Necesario para export estático
   },
-  // Configuración para demo estática
+   // Configuración para demo estática
   assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
   // Deshabilitar optimizaciones que requieren servidor
   experimental: {

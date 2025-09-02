@@ -11,6 +11,9 @@ out/
 .turbo/
 .vercel/
 
+# Vercel
+.vercel/
+
 # Environment variables
 .env
 .env.local
