@@ -12,11 +12,25 @@
 #### **vercel.json:**
 ```json
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "out",
-  "framework": "nextjs",
-  "installCommand": "npm install",
-  "devCommand": "npm run dev"
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "out"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
 ```
 
